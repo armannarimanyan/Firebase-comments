@@ -1,0 +1,9 @@
+<section class="user-section">
+    <form class="user-form d_flex f_d__column"  [formGroup]="userProfile" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="username"  formControlName="username">
+        <input type="password" placeholder="password"  formControlName="password">
+        <input type="password" placeholder="comfirmPassword"  formControlName="comfirmPassword">
+        <button type="submit" >Submit</button>
+    </form>
+</section>
+<router-outlet></router-outlet>
