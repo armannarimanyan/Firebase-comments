@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SaveUsersService } from 'src/app/services/save-users.service';
+import { SaveUsersService } from '../../services/save-users.service';
 
 
 @Component({
@@ -26,9 +26,8 @@ export class RegisterUserComponent implements OnInit {
   async onSubmit() {
     let {username,password,comfirmPassword} = this.userProfile.value
     let comment = ''
-    let date = ''
     if(password === comfirmPassword) {
-      const newUser = await this.userService.createUser({username,password,comment,date})
+      const newUser = await this.userService.createUser({username,comment})
       sessionStorage.setItem('id',newUser.id)
       this.router.navigate(['/chat'])
     }

@@ -15,12 +15,18 @@ export class ChatComponent implements OnInit {
   public comment = new FormControl('')
   public forumComments:any;
   public date: any;
+  public newComments = []
+  public id:string;
   constructor(private saveUserService: SaveUsersService) { }
 
   ngOnInit(): void {
-    this.saveUserService.userRef.valueChanges().subscribe(queriedItems => {
-     this.forumComments = queriedItems.filter(a => a.comment);
+    this.saveUserService.comRef.valueChanges().subscribe(queriedItems => {
+     this.forumComments = queriedItems.filter(a => a.comment)
+     this.forumComments = this.forumComments.sort(function (left, right) {
+      return moment.utc(left.date).diff(moment.utc(right.date))
+  });
     })
+    this.id = sessionStorage.getItem('id')
   }
   openEmojiModal() {
     this.status = !this.status
@@ -32,10 +38,12 @@ export class ChatComponent implements OnInit {
     this.status  = false
   }
   sendComment() {
+    let username = sessionStorage.getItem('user')
+    let comment = this.comment.value
     this.status = false
-    let id = sessionStorage.getItem('id')
-    this.date = moment().format("YYYY Do MMM HH:MM");
-    this.saveUserService.update(id,{comment:this.comment.value,date:this.date})
+    this.date = moment().format('LL LTS');
+    let date = this.date
+     this.saveUserService.createComment({username,comment,date})
     this.comment = new FormControl('')
   }
 }

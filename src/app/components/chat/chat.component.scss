@@ -7,16 +7,14 @@
     position: relative;
     top: 10px;
     margin: 0 auto;
-    background-color: rgb(184, 253, 249);
-    box-shadow: 2px 2px 2px 2px rgb(60, 250, 240);
-    border-radius: 50px;
+    background-color: #f7f7f4;
     .show-results{
-        width: 90%;
-        height: 80vh;
+        width: 96%;
+        height: 82vh;
         padding: 10px;
         overflow: auto;
-        background-color: rgb(230, 233, 233) ;
-        border-radius: 20px;
+        background-color: #fff;
+        border-radius: 5px;
         position: relative;
         top: 10px;
         left: 50%;
@@ -27,7 +25,7 @@
             display: flex;
             flex-direction: column;
             border-radius: 10px;
-            background: azure;
+            background: rgb(255, 255, 255);
             span{
                 &:first-child{
                     font-size: 20px;
@@ -41,12 +39,12 @@
         bottom: 5px;
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;
+        width: 96%;
         height: 28px;
-        background-color: rgb(226, 222, 222);
-        border-radius: 10px;
+        background-color: #fff;
+        border-radius: 5px;
         input{
-            width: 90%;
+            width: 93%;
             border: none;
             outline: none;
             padding: 5px;
@@ -59,12 +57,3 @@
         right: 0;
     }
 }
-    footer{
-        width: 100%;
-        height: 30px;
-        padding: 10px;
-        background-color: rgb(228, 224, 224);
-        color: rgb(10, 215, 230);
-        position: fixed;
-        bottom: 10px;
-    }
