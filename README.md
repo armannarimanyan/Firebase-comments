@@ -29,3 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## New Link
 
 https://medium.com/mighty-ghost-hack/angular-8-firebase-cloud-messaging-push-notifications-cc80d9b36f82
+https://medium.com/@jishnusaha89/firebase-cloud-messaging-push-notifications-with-angular-1fb7f173bfba
